@@ -3,7 +3,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  
 ![API Level](https://img.shields.io/badge/API%2024+-green)  
-![Version](https://img.shields.io/badge/version-1.0.0-orange)
+![Version](https://img.shields.io/badge/version-1.0.1-orange)
 
 ---
 
@@ -31,14 +31,14 @@
 ### Gradle (Groovy)
 ```groovy
 dependencies {
-    implementation 'np.com.ishworsubedi:texmage:1.0.0'
+    implementation 'np.com.ishworsubedi:texmage:1.0.1'
 }
 ```
 
 ### Gradle (Kotlin DSL)
 ```kotlin
 dependencies {
-    implementation("np.com.ishworsubedi:texmage:1.0.0")
+    implementation("np.com.ishworsubedi:texmage:1.0.1")
 }
 ```
 
@@ -106,7 +106,8 @@ ComposeAvatar(
 
 ## 📸 Screenshots
 
-![Texmage Avatar](assets/sample_screenshot.png)
+<p align="center"> <img src="assets/sample_screenshot.png" width="200"/> <img src="assets/sample_screenshot_recyclerview.png" width="200"/> </p>
+
 
 ---
 
