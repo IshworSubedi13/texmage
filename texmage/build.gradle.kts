@@ -46,7 +46,7 @@ afterEvaluate {
 
                 groupId = "com.github.IshworSubedi13" // Required GitHub format
                 artifactId = "texmage"
-                version = "1.0.0"
+                version = "1.0.1"
 
                 pom {
                     name.set("Texmage")
