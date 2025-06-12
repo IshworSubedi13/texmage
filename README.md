@@ -106,7 +106,7 @@ ComposeAvatar(
 
 ## 📸 Screenshots
 
-*(Add screenshots or GIFs showing usage examples here)*
+![Texmage Avatar](assets/sample_screenshot.png)
 
 ---
 
