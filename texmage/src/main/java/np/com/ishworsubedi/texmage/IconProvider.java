@@ -9,10 +9,10 @@ public class IconProvider {
     private final Drawable iconDrawable;
     @Nullable
     private final String imageUrl;
-    private final int backgroundColor;
+    private final Color backgroundColor;
     private final String text;
 
-    public IconProvider(@Nullable Drawable iconDrawable, @Nullable String imageUrl, int backgroundColor, String text) {
+    public IconProvider(@Nullable Drawable iconDrawable, @Nullable String imageUrl, Color backgroundColor, String text) {
         this.iconDrawable = iconDrawable;
         this.imageUrl = imageUrl;
         this.backgroundColor = backgroundColor;
@@ -30,7 +30,7 @@ public class IconProvider {
     }
 
     public int getBackgroundColor() {
-        return backgroundColor;
+        return backgroundColor.getArgb();
     }
 
     public String getText() {

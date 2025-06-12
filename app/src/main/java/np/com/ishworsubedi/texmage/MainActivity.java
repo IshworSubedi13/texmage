@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         String userId = "1234";
         String userName = "Ishwor Subedi";
         String imageUrl = "...";
-        int bgColor = ColorGenerator.MATERIAL.getRandomColor();
+        Color bgColor = ColorGenerator.MATERIAL.getRandomColor();
         String initials = Utils.getInitials(userName);
         IconProvider provider = new IconProvider(null, imageUrl, bgColor, initials);
         ImageView imageView = findViewById(R.id.imageView);

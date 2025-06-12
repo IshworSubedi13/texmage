@@ -4,61 +4,68 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import java.util.*;
+
 public class ColorGenerator {
     public static final ColorGenerator DEFAULT;
     public static final ColorGenerator MATERIAL;
 
-    static {
-        DEFAULT = create(Arrays.asList(
-                0xfff16364,
-                0xfff58559,
-                0xfff9a43e,
-                0xffe4c62e,
-                0xff67bf74,
-                0xff59a2be,
-                0xff2093cd,
-                0xffad62a7,
-                0xff805781
-        ));
-        MATERIAL = create(Arrays.asList(
-                0xffe57373,
-                0xfff06292,
-                0xffba68c8,
-                0xff9575cd,
-                0xff7986cb,
-                0xff64b5f6,
-                0xff4fc3f7,
-                0xff4dd0e1,
-                0xff4db6ac,
-                0xff81c784,
-                0xffaed581,
-                0xffff8a65,
-                0xffd4e157,
-                0xffffd54f,
-                0xffffb74d,
-                0xffa1887f,
-                0xff90a4ae
-        ));
-    }
-
-    private final List<Integer> mColors;
+    private final List<Color> mColors;
     private final Random mRandom;
 
-    public static ColorGenerator create(List<Integer> colorList) {
-        return new ColorGenerator(colorList);
+    static {
+        DEFAULT = create(Arrays.asList(
+                new Color("light_red", "#f16364"),
+                new Color("light_orange", "#f58559"),
+                new Color("light_yellow", "#f9a43e"),
+                new Color("light_gold", "#e4c62e"),
+                new Color("light_green", "#67bf74"),
+                new Color("light_teal", "#59a2be"),
+                new Color("light_blue", "#2093cd"),
+                new Color("light_purple", "#ad62a7"),
+                new Color("light_violet", "#805781")
+        ));
+
+        MATERIAL = create(Arrays.asList(
+                new Color("red", "#e57373"),
+                new Color("pink", "#f06292"),
+                new Color("purple", "#ba68c8"),
+                new Color("deep_purple", "#9575cd"),
+                new Color("indigo", "#7986cb"),
+                new Color("blue", "#64b5f6"),
+                new Color("light_blue", "#4fc3f7"),
+                new Color("cyan", "#4dd0e1"),
+                new Color("teal", "#4db6ac"),
+                new Color("green", "#81c784"),
+                new Color("light_green", "#aed581"),
+                new Color("orange", "#ff8a65"),
+                new Color("lime", "#d4e157"),
+                new Color("yellow", "#ffd54f"),
+                new Color("amber", "#ffb74d"),
+                new Color("brown", "#a1887f"),
+                new Color("blue_grey", "#90a4ae")
+        ));
     }
 
-    private ColorGenerator(List<Integer> colorList) {
-        mColors = colorList;
-        mRandom = new Random(System.currentTimeMillis());
+    public static ColorGenerator create(List<Color> colors) {
+        return new ColorGenerator(colors);
     }
 
-    public int getRandomColor() {
+    private ColorGenerator(List<Color> colors) {
+        this.mColors = new ArrayList<>(colors);
+        this.mRandom = new Random(System.currentTimeMillis());
+    }
+
+    public Color getRandomColor() {
         return mColors.get(mRandom.nextInt(mColors.size()));
     }
 
-    public int getColor(Object key) {
+    public Color getColor(Object key) {
         int index = Math.abs(key.hashCode()) % mColors.size();
         return mColors.get(index);
+    }
+
+    public List<Color> getColors() {
+        return Collections.unmodifiableList(mColors);
     }
 }
