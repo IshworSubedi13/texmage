@@ -31,14 +31,14 @@
 ### Gradle (Groovy)
 ```groovy
 dependencies {
-    implementation 'np.com.ishworsubedi:texmage:1.0.1'
+    implementation 'com.github.IshworSubedi13:texmage:v1.0.1'
 }
 ```
 
 ### Gradle (Kotlin DSL)
 ```kotlin
 dependencies {
-    implementation("np.com.ishworsubedi:texmage:1.0.1")
+    implementation("com.github.IshworSubedi13:texmage:v1.0.1")
 }
 ```
 
